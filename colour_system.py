@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jul  7 22:26:30 2020
-
-@author: bruzewskis
+Code from https://scipython.com/blog/converting-a-spectrum-to-a-colour/
 """
 
 # colour_system.py
