@@ -4,10 +4,12 @@
 Created on Wed Jul  8 23:29:18 2020
 
 @author: bruzewskis
+
+The rough idea for the scaling effect sort of follows this paper:
+https://arxiv.org/pdf/physics/0510113.pdf
 """
 
 import matplotlib.pyplot as plt
-from mpl_toolkits.axes_grid1.inset_locator import zoomed_inset_axes
 import numpy as np
 from scipy.constants import k,h,c
 from colour_system import cs_hdtv as cs
