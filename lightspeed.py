@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jul  8 23:29:18 2020
+lightspeed.py - Prototype code which demonstrates the effect.
 
-@author: bruzewskis
-
-The rough idea for the scaling effect sort of follows this paper:
+Generates an animation which approximates the look of the effect. This code
+only uses a collection of sun-like stars, randomly distributed, and does not
+adequately describe the change in color and brightness, although it serves as
+a decent approximation. Roughly follows this derivation:
 https://arxiv.org/pdf/physics/0510113.pdf
 """
+
+__author__ = "Seth Bruzewski"
+__email__ = "bruzewskis@gmail.com"
+__created__ = "2020-07-08"
+__modified__ = "2023-04-06"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -138,7 +144,7 @@ def animated(bmax, tmax, fps=30, save=None):
     ims = []
     for i in trange(len(time)):
         # Set up plots
-        fig = plt.figure(figsize=(16,9), dpi=160)
+        fig = plt.figure(figsize=(16,9), dpi=240)
         
         # First plot
         ax1 = fig.add_axes([0.01, 0.01, 0.98, 0.98], projection='mollweide')
@@ -175,7 +181,8 @@ if __name__=='__main__':
     # This line will run an animation script
     #animated(0.999, 30, 60, 'test.mp4')
     
-    plt.figure(figsize=(16,9), dpi=120)
+    plt.style.use('dark_background')
+    plt.figure(figsize=(16,9), dpi=240)
     plt.subplot(projection='mollweide')
     lon, lat, rgba = gofast(np.deg2rad(45), np.deg2rad(0), 0.8, seed=1)
     plt.scatter(lon,lat, color=rgba, edgecolor='none', s=20, zorder=10)
